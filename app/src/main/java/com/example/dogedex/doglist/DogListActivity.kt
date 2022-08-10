@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.ViewModel
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.dogedex.Dog
 import com.example.dogedex.R
@@ -15,6 +16,7 @@ import com.example.dogedex.databinding.ActivityDogListBinding
 import com.example.dogedex.dogdetail.DogDetailActivity
 import com.example.dogedex.dogdetail.DogDetailActivity.Companion.DOG_KEY
 
+private const val  GRIO_SPAN_COUNT = 3
 class DogListActivity : AppCompatActivity() {
     private val dogListViewModel: DogListViewModel by viewModels()
 
@@ -26,7 +28,7 @@ class DogListActivity : AppCompatActivity() {
         val loadingWheel = binding.loadingWheel
 
         val recycler = binding.dogRecycler
-        recycler.layoutManager = LinearLayoutManager(this)
+        recycler.layoutManager = GridLayoutManager(this,GRIO_SPAN_COUNT)
 
         val adapter = DogAdapter()
         adapter.setOnItemClickListener {
