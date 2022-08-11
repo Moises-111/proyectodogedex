@@ -15,9 +15,11 @@
     <string name="email">email</string>
     <string name="password">pass</string>
     <string name="login">login</string>
-    <string name="do_not_have_an_account">do not hack acces?</string>
+    <string name="do_not_have_an_account">do not have acces?</string>
     <string name="register">reister</string>
     <string name="confirm_password">confirm pass</string>
     <string name="sign_up">sign up</string>
+    <string name="email_is_not_valid">Email is not valid</string>
+    <string name="pass_must_not_be_empty">pass must not be empty</string>
 
 </resources>
