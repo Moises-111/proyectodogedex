@@ -11,7 +11,6 @@ suspend fun <T> makeNetworkCall(
     call: suspend () -> T
 ) :ApiResponseStatus<T>{
     return withContext(Dispatchers.IO){
-        //se manda llapar el enpoint para obtener dogs
         try{
             ApiResponseStatus.Success(call())
         }catch (e: UnknownHostException){

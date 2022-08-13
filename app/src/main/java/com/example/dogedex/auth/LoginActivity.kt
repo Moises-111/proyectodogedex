@@ -8,7 +8,7 @@ import com.example.dogedex.R
 import com.example.dogedex.databinding.ActivityLoginBinding
 
 
-class LoginActivity : AppCompatActivity() ,LoginFragment.LoginFragmentActions{
+class LoginActivity : AppCompatActivity() ,LoginFragment.LoginFragmentActions,SingUpFragment.SignUpFragmentActions{
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,5 +19,13 @@ class LoginActivity : AppCompatActivity() ,LoginFragment.LoginFragmentActions{
     override fun onRegisterButtonClick() {
        findNavController(R.id.nav_host_fragment)
        .navigate(LoginFragmentDirections.actionLoginFragmentToSingOutFragment())
+    }
+
+    override fun onSignUpFieldsValidates(
+        email: String,
+        password: String,
+        passwordConfirmacion: String
+    ) {
+        TODO("Not yet implemented")
     }
 }

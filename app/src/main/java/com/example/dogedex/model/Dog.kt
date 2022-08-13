@@ -1,4 +1,4 @@
-package com.example.dogedex
+package com.example.dogedex.model
 
 import android.os.Parcelable
 import com.squareup.moshi.Json

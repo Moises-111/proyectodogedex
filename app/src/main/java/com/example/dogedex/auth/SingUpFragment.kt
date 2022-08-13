@@ -1,5 +1,6 @@
 package com.example.dogedex.auth
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Patterns
 import androidx.fragment.app.Fragment
@@ -7,19 +8,35 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.dogedex.R
-import com.example.dogedex.databinding.FragmentSingOutBinding
+import com.example.dogedex.databinding.FragmentSingUpBinding
 
 
-class SingOutFragment : Fragment() {
+class SingUpFragment : Fragment() {
 
-    private lateinit var binding: FragmentSingOutBinding
+    interface SignUpFragmentActions{
+        fun onSignUpFieldsValidates(email: String, password : String,passwordConfirmacion : String)
+    }
+
+    private lateinit var signUpFragmentActions: SignUpFragmentActions
+    //con este metodo puedes llamar los metodos de loginfragmentactions desde cualquier parte de la aplicacion
+    //sirve para passar el contextto al fragment
+    override fun onAttach(context: Context){
+        super.onAttach(context)
+        signUpFragmentActions = try{
+            context as SignUpFragmentActions
+        }catch (e:ClassCastException){
+            throw  ClassCastException("$context must implement SignUpFragmentActions")
+        }
+    }
+
+    private lateinit var binding: FragmentSingUpBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentSingOutBinding.inflate(layoutInflater)
+        binding = FragmentSingUpBinding.inflate(layoutInflater)
         setuoSingUpButton()
         return binding.root
     }
@@ -53,6 +70,12 @@ class SingOutFragment : Fragment() {
             binding.confirmPasswordInput.error =getString(R.string.pass_must_not_be_empty)
             return
         }
+
+        if(password != passwordConfirmation){
+            binding.passwordInput.error =  getString(R.string.password_do_not_match)
+        }
+
+        signUpFragmentActions.onSignUpFieldsValidates(email,password,passwordConfirmation)
 
     }
 

@@ -21,5 +21,6 @@
     <string name="sign_up">sign up</string>
     <string name="email_is_not_valid">Email is not valid</string>
     <string name="pass_must_not_be_empty">pass must not be empty</string>
+    <string name="password_do_not_match">password do not match</string>
 
 </resources>

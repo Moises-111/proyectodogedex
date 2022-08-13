@@ -14,6 +14,6 @@
     </fragment>
     <fragment
         android:id="@+id/singOutFragment"
-        android:name="com.example.dogedex.auth.SingOutFragment"
+        android:name="com.example.dogedex.auth.SingUpFragment"
         android:label="SingOutFragment" />
 </navigation>

@@ -6,11 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.dogedex.Dog
-import com.example.dogedex.R
 import com.example.dogedex.api.responses.ApiResponseStatus
 import com.example.dogedex.databinding.ActivityDogListBinding
 import com.example.dogedex.dogdetail.DogDetailActivity
