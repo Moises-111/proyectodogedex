@@ -15,8 +15,12 @@ class AuthRepository {
     //de aqui se manda llamar  la API
     suspend fun signUp(email:String, password: String, passwordConfirmation: String) : ApiResponseStatus<User> = makeNetworkCall {
         val signUpDTO  = SignUpDTO(email,password,passwordConfirmation)
-        val sigUpResponse = DogsApi.retrofitService.signUp(signUpDTO)
-        val userDTO = sigUpResponse.data.user
+        val signUpResponse = DogsApi.retrofitService.signUp(signUpDTO)
+
+        if(!signUpResponse.isSuccess){
+            throw   Exception(signUpResponse.message)
+        }
+        val userDTO = signUpResponse.data.user
         val userDTOMapper = UserDTOMapper()
         userDTOMapper.fromUserDTOToUserDomain(userDTO)
     }

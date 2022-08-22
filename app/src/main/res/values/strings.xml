@@ -22,5 +22,8 @@
     <string name="email_is_not_valid">Email is not valid</string>
     <string name="pass_must_not_be_empty">pass must not be empty</string>
     <string name="password_do_not_match">password do not match</string>
+    <string name="error_sign_up">error sing up</string>
+    <string name="error_sign_in">error sign in</string>
+    <string name="user_already_exists">user already exist</string>
 
 </resources>
