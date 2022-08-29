@@ -4,11 +4,23 @@ import com.example.dogedex.api.DogsApi
 import com.example.dogedex.api.makeNetworkCall
 import com.example.dogedex.api.responses.ApiResponseStatus
 import com.example.dogedex.dto.DogDTOMapper
+import com.example.dogedex.dto.LoginDTO
 import com.example.dogedex.dto.SignUpDTO
 import com.example.dogedex.dto.UserDTOMapper
 import com.example.dogedex.model.User
 
 class AuthRepository {
+    suspend fun login(email:String, password: String) : ApiResponseStatus<User> = makeNetworkCall {
+        val loginDTO  = LoginDTO(email,password)
+        val loginResponse = DogsApi.retrofitService.login(loginDTO)
+
+        if(!loginResponse.isSuccess){
+            throw   Exception(loginResponse.message)
+        }
+        val userDTO = loginResponse.data.user
+        val userDTOMapper = UserDTOMapper()
+        userDTOMapper.fromUserDTOToUserDomain(userDTO)
+    }
     //FLUJO
     //Del SignUpFragmen se crea una interfaz , en el login se implementa la interfaz que se creo en el SignUpFragment
     //del LoginActivity se ejecutara un metodo mandara llamar al viewmodel donde abra un metodo que mandara llamar al repository AuthRepository

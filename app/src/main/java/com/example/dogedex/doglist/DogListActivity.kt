@@ -45,7 +45,7 @@ class DogListActivity : AppCompatActivity() {
             when(status){
                 is ApiResponseStatus.Error ->{
                     loadingWheel.visibility = View.GONE
-                    Toast.makeText(this,status.message,Toast.LENGTH_LONG).show()
+                    Toast.makeText(this,status.messageId,Toast.LENGTH_LONG).show()
                 }
                 is ApiResponseStatus.Loading -> loadingWheel.visibility = View.VISIBLE
                 is ApiResponseStatus.Success -> loadingWheel.visibility = View.GONE

@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.dogedex.R
 import com.example.dogedex.databinding.FragmentSingUpBinding
+import com.example.dogedex.isValidEmail
 
 
 class SingUpFragment : Fragment() {
@@ -79,9 +80,7 @@ class SingUpFragment : Fragment() {
 
     }
 
-    private fun isValidEmail(email: String?) : Boolean{
-        return email.isNullOrEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()
-    }
+
 
 
 }
