@@ -39,6 +39,7 @@ class LoginActivity : AppCompatActivity() ,LoginFragment.LoginFragmentActions,Si
             user->
             if(user != null){
                 startMainActivity()
+                finish()
             }
         }
     }
