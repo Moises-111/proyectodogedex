@@ -41,5 +41,14 @@ class User (
             )
 
         }
+
+        fun logout(activity: Activity){
+            activity.getSharedPreferences(
+                AUTH_PREFS,
+                Context.MODE_PRIVATE
+            ).also {
+                it.edit().clear().apply()
+            }
+        }
     }
 }
