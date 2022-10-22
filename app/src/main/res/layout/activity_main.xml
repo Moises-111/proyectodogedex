@@ -18,27 +18,41 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/ic_baseline_photo_camera"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/colorAccent"
             android:contentDescription="@string/this_is_a_content_description"
-            android:layout_margin="16dp"/>
+            android:src="@drawable/ic_baseline_photo_camera" />
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/dog_list_fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
             android:layout_toStartOf="@+id/take_photo_fab"
-            android:src="@drawable/ic_baseline_list"
+            android:backgroundTint="@color/colorAccent"
             android:contentDescription="@string/this_is_a_content_description"
-            android:layout_margin="16dp"/>
+            android:src="@drawable/ic_baseline_list" />
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/settings_fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
             android:layout_toEndOf="@+id/take_photo_fab"
-            android:src="@drawable/ic_baseline_list"
+            android:backgroundTint="@color/colorAccent"
             android:contentDescription="@string/this_is_a_content_description"
-            android:layout_margin="16dp"/>
+            android:src="@drawable/ic_baseline_settings" />
 
     </RelativeLayout>
 </layout>
