@@ -28,5 +28,6 @@
     <string name="there_was_an_error">ocurrio un error</string>
     <string name="wrong_use_or_passoword">Wrong user or password</string>
     <string name="this_is_a_content_description">This is a content description</string>
+    <string name="error_adding_dog">there was an error adding dog to the collection</string>
 
 </resources>
